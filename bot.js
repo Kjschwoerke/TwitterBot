@@ -13,14 +13,19 @@ const T = new Twit({
 })
 
 //setting up a user stream
-let stream = T.stream('statuses/filter', { track: '@Kenneth56744636' })
+let stream = T.stream('statuses/filter', { track: 'Kenneth56744636' })
 
 //stream anytime a user follows me (additional options on the Twitter API streaming documentation)
+//stream.on('follow', followed)
 stream.on('follow', followed)
+
+// function tweetEvent(eventMsg) {
+//     console.log(eventMsg + ' this tweet tracker worked!')
+// }
 
 //create followed function that runs when a twitter user follows me.
 function followed(eventMsg) {
-    console.log('follow event')
+    let name = eventMsg.source.name
     let screenName = eventMsg.source.screen_name
         tweetIt('@' + screenName + ' Thank you for following me!')
 }
@@ -38,7 +43,7 @@ function tweetIt(txt) {
         if (err) {
             console.error(`###There was an error: ${err}`)
         } else{
-            console.log(tweet.status)
+            console.log(data.tweet)
         }
         
     }
