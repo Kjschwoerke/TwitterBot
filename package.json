@@ -1,0 +1,17 @@
+{
+  "name": "twitter-bot",
+  "version": "1.0.0",
+  "description": "Twitter Bot to retweet and like twitter posts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kenneth",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "node": "^14.5.0",
+    "nodemon": "^2.0.4",
+    "twit": "^2.2.11"
+  }
+}
